@@ -1,0 +1,462 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 15, 2023, 2:21:18 PM
+    Author     : Umair Shafiq
+*/
+.head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: red;
+}
+
+main {
+    margin-top: 60px;
+    background: #f1f5f9;
+    min-height: 90vh;
+    padding: 1rem 12rem;
+}
+
+.dash-title {
+    color: #1D2231;
+    margin-bottom: 1rem;
+    font-size: 36px;
+	font-weight: 600;
+        
+}
+
+.dash-cards {
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-column-gap: 3rem;
+    margin-top: 36px;
+}
+
+.card-single {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.card-body {
+    padding: 3rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-body span {
+    font-size: 6rem;
+    /*color: #777;*/
+    padding-right: 1.4rem;
+    
+    /*width: 80px;*/
+	/*height: 80px;*/
+	/*border-radius: 10px;*/
+	/*font-size: 36px;*/
+	/*display: flex;*/
+	/*justify-content: center;*/
+	/*align-items: center;*/
+    
+}
+
+.card-body h5 {
+    color: var(--text-grey);
+    font-size: 1.5rem;
+}
+
+.card-body h4 {
+    color: var(--color-dark);
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    text-align: center;
+    
+}
+
+.card-single:nth-child(1)  {
+	background: var(--light-blue);
+	color: var(--blue);
+}
+
+.card-single:nth-child(2)  {
+	background: var(--light-yellow);
+	color: var(--yellow);
+}
+.card-single:nth-child(3) {
+	background: var(--light-orange);
+	color: var(--orange);
+}
+
+/*Add button CSS*/
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
+/*Table CSS Start*/
+
+.manTable{
+    margin-top: 30px;
+    max-width: 100%;
+    border: 1px solid #00bcd4;
+    background-color: #efefef33;
+    padding: 15px;
+    overflow: auto;
+    /*margin: auto;*/
+    border-radius: 4px;
+}
+
+.manTable table{
+    width: 100%;
+    font-size: 14px;
+    color: #444;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+
+.manTable table thead{
+    background-color: #00bcd4;
+    color: #fff;
+    
+}
+
+.manTable table thead th{
+    padding: 15px;
+}
+
+.manTable table thead th,
+.manTable table thead td{
+    border: 1px solid #00000017;
+    padding: 10px 15px;
+}
+
+.manTable table tbody tr{
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.manTable table tbody tr:nth-child(even){
+    background-color: rgb(238, 238, 238);
+}
+
+.manTable table tbody tr:hover{
+    filter: drop-shadow(0px 2px 6px #0002);
+}
+
+.manTable table tbody tr td{
+    
+    padding: 6px;
+    text-align: center;
+}
+
+.manTable table tbody tr td button{
+    background-color:white; /* Green */
+  border:1px solid #008CBA;
+  border-radius: 30%;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.manTable table tbody tr td button .button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button1:hover {
+  background-color: lightskyblue;
+  color: white;
+}
+
+.manTable table tbody tr td button .button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button2:hover {
+  background-color: red;
+  color: white;
+}
+
+.manTable table tbody tr td button .button3 {
+  background-color: #f85f73; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: red;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 6px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #d5d1defe;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+/*Add Manager CSS Start*/
+
+.man-title {
+    /*margin-top: 30px;*/
+    /*margin-bottom: 150px;*/
+    color: #1D2231;
+    
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+        
+}
+
+.task-title{
+    margin-top: 280px;
+    margin-bottom: 20px;
+    color: #1D2231;
+    
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.man-form{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+
+/*input[type="radio"]{
+    vertical-align: baseline;
+    color: red;
+}*/
+
+label{
+  margin: 3px;
+}
+
+
+
+.man-form p{
+    font-size: 16px;
+    margin: 6px 0;
+}
+
+.man-form .input, select{
+    font-size: 16px;
+    padding: 8px 15px;
+    width: 100%;
+    border: 1px solid #1D2231;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+.man-form button{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    /*padding: 10px 15px;*/
+    width: 50%;
+    border: 1px solid #1D2231;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.man-form button:hover{
+    color: green;
+}
+
+/*Show Task Details CSS Start*/
+
+.taskTable table, th, td{
+    padding: 1rem;
+    border-collapse: collapse;
+    
+}
+
+.taskDetails{
+/*    width: 82vw;
+    height: 90vh;*/
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tastTitle{
+    /*width: 100%;*/
+    height: 10%;
+    background-color: #fff4;
+    padding: .58rem 1rem;
+    color: #1D2231;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.taskTable{
+    width: 95%;
+    max-height: calc(89% - .8rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+    text-align: center;
+}
+
+/*.taskTable:: webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}*/
+
+.taskTable table{
+   width:  100%;
+}
+
+.taskTable table thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+}
+
+.taskTable table tbody tr:nth-child(even){
+    background-color: #0000000f;
+}
+
+.taskTable table tbody tr:hover{
+    background-color: #fff6;
+}
+
+ .status {
+	font-size: 16px;
+	padding: .2rem 0;
+	color: var(--light);
+/*        border: 2px solid transparent;
+	border-radius: 2rem;*/
+	/*font-weight: 700;*/
+        
+        
+}
+.status.completed {
+	/*background: var(--blue);*/
+background-color: #86e49d;
+color: #006b21;
+}
+
+.status.process {
+	background: var(--yellow);
+}
+.status.pending {
+	background: var(--orange);
+}
+
+/* CSS */
+.button-35 {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.0rem;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-35:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}

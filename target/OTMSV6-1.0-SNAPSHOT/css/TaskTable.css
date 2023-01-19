@@ -1,0 +1,185 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 17, 2023, 11:08:18 PM
+    Author     : Umair Shafiq
+*/
+
+/*Show Task Details CSS Start*/
+
+.showTable table, th, td{
+    padding: 1rem;
+    border-collapse: collapse;
+    border: 1px solid  #d5d1defe;
+
+}
+
+
+
+.tastTitle{
+    /*width: 100%;*/
+    height: 10%;
+    background-color: #fff4;
+    padding: .58rem 1rem;
+    color: #1D2231;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.showTable{
+    /*border: 1px solid #006988;*/
+    width: 100%;
+    max-height: calc(89% - .8rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    /*overflow: auto;*/
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+/*.taskTable:: webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}*/
+
+.showTable table{
+    width:  100%;
+}
+
+.showTable table thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+
+}
+
+.showTable table tbody tr:nth-child(even){
+    background-color: #0000000f;
+}
+
+.showTable table tbody tr:hover{
+    background-color: #fff6;
+}
+
+.status {
+    font-size: 16px;
+    padding: .2rem 0;
+    color: var(--light);
+    /*        border: 2px solid transparent;
+            border-radius: 2rem;*/
+    /*font-weight: 700;*/
+
+
+}
+.status.completed {
+    /*background: var(--blue);*/
+    background-color: #86e49d;
+    color: #006b21;
+}
+
+.status.process {
+    background: var(--yellow);
+}
+.status.pending {
+    background: var(--orange);
+}
+
+
+/*Show task Details Table CSS*/
+
+.taskDetailsTable{
+    margin-top: 30px;
+    max-width: 100%;
+    border: 1px solid #00bcd4;
+    background-color: #efefef33;
+    padding: 15px;
+    overflow: auto;
+    /*margin: auto;*/
+    border-radius: 4px;
+}
+
+.taskDetailsTable table{
+    width: 100%;
+    font-size: 14px;
+    color: #444;
+    white-space: nowrap;
+    border-collapse: collapse;
+
+
+}
+
+.taskDetailsTable table tr {
+
+    text-align: center;
+
+
+}
+
+.taskDetailsTable table tr td{
+    text-align: left;
+    /*padding-right: 250px;*/
+    /*padding-left: 0;*/
+}
+
+.taskDetailsTable table, th, td{
+    border: none;
+}
+
+.addDetailsTitle{
+    /*width: 100%;*/
+    height: 10%;
+    background-color: #fff4;
+    padding: .58rem 1rem;
+    color: #1D2231;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.taskDetailsTable h5{
+    background-color: #1D2231;
+    color: white;
+    width: 100%;
+    padding: 6px;
+}
+
+/* CSS for the notice container */
+.notice-container {
+    font-family: Arial, sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* CSS for the title */
+.notice-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* CSS for the publish date */
+.publish-date {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* CSS for the notice */
+.notice {
+    font-size: 18px;
+}
+
+.notice p{
+    font-size: 14px;
+}
