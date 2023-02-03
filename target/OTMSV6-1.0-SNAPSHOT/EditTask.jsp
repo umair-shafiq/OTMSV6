@@ -58,7 +58,8 @@
                             <option value="<%=t.getStatus()%>"><%=t.getStatus()%></option>
                             <option >Fresh</option>
                             <option>On Hold</option>
-                            <option>Complete</option>
+                            <option>Pending</option>
+                            <option>Close</option>
                         </select>
                         <p>Set Priority:</p>
                         <select name="priority" id="priority" >

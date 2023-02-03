@@ -63,7 +63,7 @@
                 </li>
 
                 <li>
-                    <a href="showEmployeeDetails.jsp" class="btn">
+                    <a href="showEmployeeDetails.jsp" class="btn" data-active="employee">
                         <i class="fa-solid fa-user bs"></i>
                         <span class="text">Employee</span>
                     </a>
@@ -120,6 +120,5 @@
         <!-- CONTENT -->
 
         <!--<script src="js/adminJavaScripit.js"></script>-->
-        <script defer src="js/activePage.js"></script>
     </body>
 </html>

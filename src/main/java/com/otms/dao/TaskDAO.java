@@ -260,7 +260,7 @@ public class TaskDAO {
         Task t = null;
         try (Connection con = db_connection.connect()) {
             //String SELECT_ALL_TASKS = "Select * from tasks where emp_id=?";
-            String sql = "SELECT tasks.id, tasks.t_name, tasks.t_description, tasks.t_startDate, tasks.t_endDate, tasks.t_assignBy, users.u_name, tasks.t_status, tasks.t_priority FROM otms.tasks INNER JOIN otms.users ON users.id = tasks.emp_id where emp_id=? ORDER BY tasks.t_priority asc;";
+            String sql = "SELECT tasks.id, tasks.t_name, tasks.t_description, tasks.t_startDate, tasks.t_endDate, tasks.t_assignBy, users.u_name, tasks.t_status, man_id, tasks.t_priority FROM otms.tasks INNER JOIN otms.users ON users.id = tasks.emp_id where emp_id=? ORDER BY tasks.t_priority asc;";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setInt(1, EmpId);
             ResultSet rs = preparedStatement.executeQuery();
@@ -275,7 +275,8 @@ public class TaskDAO {
                 t.setAssignBy(rs.getString(6));
                 t.setAssignEmp(rs.getString(7));
                 t.setStatus(rs.getString(8));
-                t.setPriority(rs.getInt(9));
+                t.setMan_id(rs.getInt(9));
+                t.setPriority(rs.getInt(10));
                 tasks.add(t);
             }
         } catch (SQLException e) {

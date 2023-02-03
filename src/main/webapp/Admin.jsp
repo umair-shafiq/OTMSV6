@@ -3,6 +3,8 @@
     Created on : Jan 15, 2023, 3:07:27 AM
     Author     : Umair Shafiq
 --%>
+<%@page import="com.otms.dao.DataCalculateDAO"%>
+<%@page import="com.otms.dao.SubTaskDAO"%>
 <%@page import="com.otms.dao.AddManagerDAO"%>
 <%@page import="com.otms.model.User"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -18,6 +20,9 @@
     <body>
          <%@include file="Adminnav.jsp" %>
          <section id="content" class="main-content">
+             <%
+               DataCalculateDAO data = new DataCalculateDAO();
+             %>
          <main>
    	  	<h2 class="dash-title">Admin Dashboard</h2>
              
@@ -27,7 +32,7 @@
    	  				<span ><i class="fa-solid fa-user"></i></span>
    	  			     <div>
    	  			     	<h5>Total Managers </h5>
-   	  			     	<h4>5</h4>
+   	  			     	<h4><%=data.totalManager()%></h4>
    	  			     </div>
    	  			</div>
    	  		</div>
@@ -36,7 +41,7 @@
    	  				<span ><i class="fa-solid fa-user"></i></span>
    	  			     <div>
    	  			     	<h5>Total Employees </h5>
-   	  			     	<h4>5</h4>
+   	  			     	<h4><%=data.totalEmployee()%></h4>
    	  			     </div>
    	  			</div>
    	  		</div>
@@ -45,7 +50,7 @@
    	  				<span><i class="fa-solid fa-list-check"></i></span>
    	  			     <div>
    	  			     	<h5>Total Tasks </h5>
-   	  			     	<h4>5</h4>
+   	  			     	<h4><%=data.totalTask()%></h4>
    	  			     </div>
    	  			</div>
    	  		</div>

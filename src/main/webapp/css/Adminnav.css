@@ -189,7 +189,7 @@ body {
 }*/
 
 #sidebar .side-menu li .active{
-    color: red;
+    color: var(--dark);
 }
 
 
@@ -345,27 +345,22 @@ margin-left: calc(100% - 40rem);
 
 
 
-#content header p .AdminName{
-	margin-left:calc(100% - 80rem);
-	width: 350px;
-	display: flex;
-    /*align-items: center;*/
-    position: relative;
-    object-fit: cover;
-   margin-left: 30rem;
-   color: red;
+ .AdminName{
+   text-transform: uppercase;
+   letter-spacing: 2px;
 }
 
-#content header p .ManagerName{
-	margin-left:calc(100% - 80rem);
-	width: 350px;
-	display: flex;
+.ManagerName{
+	/*margin-left:calc(100% - 80rem);*/
+	/*width: 350px;*/
+	/*display: flex;*/
     /*align-items: center;*/
-    position: relative;
-    object-fit: cover;
-   margin-left: 30rem;
-   color: red;
-   
+    /*position: relative;*/
+    /*object-fit: cover;*/
+   /*margin-left: 30rem;*/
+   /*color: red;*/
+   text-transform: uppercase;
+   letter-spacing: 2px;
 }
 
 /* NAVBAR */

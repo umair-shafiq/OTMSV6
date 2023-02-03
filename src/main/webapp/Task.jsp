@@ -21,6 +21,7 @@
         <title>Task Page</title>
         <link rel="stylesheet" type="text/css" href="css/Admin.css">
         <link rel="styleSheet" type="text/css" href="css/TaskTable.css">
+        <link rel="styleSheet" type="text/css" href="css/bootstrap.css">
     </head>
     <body>
         <%@include file="ManagerNav.jsp" %>
@@ -102,13 +103,17 @@
 
                                     %>
 
-                                    <div   class="btn btn-sm btn-outline-success"    >Complete</div>
+                                    <div   class="btn btn-sm btn-success "    >Complete</div>
                                     <%} else if ("On Hold".equals(t.getStatus())) {%>
-                                    <div class="btn btn-sm btn-outline-info "> On Hold</div>
+                                    <div class="btn btn-sm btn-info "> On Hold</div>
                                     <%} else if ("Fresh".equals(t.getStatus())) {%>
-                                    <a href="#" class="btn btn-sm btn-outline-dark">Fresh</a>
+                                    <a href="#" class="btn btn-sm btn-primary">Fresh</a>
+                                    <%} else if ("Pending".equals(t.getStatus())) {%>
+                                    <a href="#" class="btn btn-sm btn-primary">Pending</a>
+                                    <%} else if ("Close".equals(t.getStatus())) { %>
+                                    <a href="#" class="btn btn-sm btn-primary">Close</a>
                                     <%} else {%>
-                                    <a href="#" class="btn btn-sm btn-outline-dark">In Progress</a>
+                                    <a href="#" class="btn btn-sm btn-warning">In Progress</a>
                                     <%}%>
                                 </td>
                                 <td>
@@ -140,12 +145,12 @@
             swal("Congrats", "Add Task Sucessfully!", "success");
                 <c:remove var="sucMsg" scope="session"/>
             </c:if>
-            
+
             <c:if test="${not empty EditSucMsg}">
             swal("Updated", "Task Data update Sucessfuly!", "success");
                 <c:remove var="EditSucMsg" scope="session"/>
             </c:if>
-                
+
             <c:if test="${not empty delMsg}">
             swal("Done!", "Task Delete Sucessfully!", "success");
                 <c:remove var="delMsg" scope="session"/>

@@ -4,6 +4,7 @@
     Author     : Umair Shafiq
 --%>
 
+<%@page import="com.otms.dao.DataCalculateDAO"%>
 <%@page import="com.otms.dao.AddManagerDAO"%>
 <%@page import="com.otms.model.User"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -19,6 +20,9 @@
     <body>
          <%@include file="EmployeeNav.jsp" %>
          <section id="content" class="main-content">
+             <%
+                DataCalculateDAO data = new DataCalculateDAO();
+            %>
          <main>
    	  	<h2 class="dash-title">Employee Dashboard</h2>
              
@@ -45,8 +49,10 @@
    	  			<div class="card-body">
    	  				<span><i class="fa-solid fa-list-check"></i></span>
    	  			     <div>
+                                         <c:set var="id" value="${Employee.id}" />
+                                <% int id= (int) pageContext.getAttribute("id"); %>
    	  			     	<h5> Assigned Tasks </h5>
-   	  			     	<h4>5</h4>
+   	  			     	<h4><%=data.totalAssignedEmpTask(id)%></h4>
    	  			     </div>
    	  			</div>
    	  		</div>

@@ -4,6 +4,11 @@
     Author     : Umair Shafiq
 --%>
 
+<%@page import="com.otms.dao.db_connection"%>
+<%@page import="com.otms.model.DisplayCloseTaskNoti"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="com.otms.model.Task"%>
 <%@page import="java.util.List"%>
 <%@page import="com.otms.dao.TaskDAO"%>
@@ -58,6 +63,30 @@
                                 <td><%= t.getAssignBy()%></td>
                                 <td><%= t.getAssignEmp()%></td>
                                 <td class="text-center"> <%= t.getStatus()%></td>
+                                <%
+                                    Connection con = null;
+                                    int id = t.getId();
+
+                                    if ("Close".equals(t.getStatus())) {
+                                        try {
+                                            con = db_connection.connect();
+                                            String msg = "This Task(" + t.getName() + ") Has Been CLosed By Manager!";
+                                            PreparedStatement pst = con.prepareStatement("select count(*) from notification where man = " + t.getMan_id() + " and task_id=" + id + " and is_closed=0");
+                                            ResultSet rs = pst.executeQuery();
+                                            // Get the count
+                                            rs.next();
+                                            int count = rs.getInt(1);
+                                            //out.println("ABABABABA = = " + count);
+                                            // Print the count
+                                            if (count > 0) {
+                                                DisplayCloseTaskNoti.main(msg, id);
+                                            }
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                            System.out.println(e);
+                                        }
+                                    }
+                                %>
                                 <td>
                                     <a href="EmployeeTaskDetails.jsp?id=<%= t.getId()%>"><button class="button-35" title="View Details"><i class="fa-solid fa-eye"></i></button></a>
                                     <a href="ViewSubTask.jsp?id=<%= t.getId()%>"><button class="button-35" title="View Sub tasks"><i class="fa-solid fa-diagram-next"></i></button></a>

@@ -37,6 +37,7 @@ E:\Java\OTMSV6\src\main\java\com\otms\servlets\CompleteTaskNotiServlet.java
 E:\Java\OTMSV6\src\main\java\com\otms\dao\SubTaskDAO.java
 E:\Java\OTMSV6\src\main\java\com\otms\servlets\DeleteEmployeeServlet.java
 E:\Java\OTMSV6\src\main\java\com\otms\servlets\AddManagerServlet.java
+E:\Java\OTMSV6\src\main\java\com\otms\model\DisplayCloseTaskNoti.java
 E:\Java\OTMSV6\src\main\java\com\otms\model\Notification.java
 E:\Java\OTMSV6\src\main\java\com\otms\dao\db_connection.java
 E:\Java\OTMSV6\src\main\java\com\otms\model\DisplayCompleteTaskNoti.java
