@@ -20,6 +20,7 @@
         <title>Tasks</title>
         <link rel="stylesheet" type="text/css" href="css/Admin.css">
         <link rel="stylesheet" type="text/css" href="css/TaskTable.css">
+        <link rel="styleSheet" type="text/css" href="css/bootstrap.css">
     </head>
     <body>
         <%@include file="EmployeeNav.jsp" %>
@@ -62,7 +63,21 @@
                                 <td class="text-danger"><%= t.getEdate()%></td>
                                 <td><%= t.getAssignBy()%></td>
                                 <td><%= t.getAssignEmp()%></td>
-                                <td class="text-center"> <%= t.getStatus()%></td>
+                                <td class="text-center"> 
+                                    <%if ("Completed".equals(t.getStatus())) {%>
+                                    <div   class="btn btn-sm btn-success "    >Completed</div>
+                                    <%} else if ("On Hold".equals(t.getStatus())) {%>
+                                    <div class="btn btn-sm btn-info "> On Hold</div>
+                                    <%} else if ("Fresh".equals(t.getStatus())) {%>
+                                    <div  class="btn btn-sm btn-primary">Fresh</div>
+                                    <%} else if ("Pending".equals(t.getStatus())) {%>
+                                    <div  class="btn btn-sm btn-primary">Pending</div>
+                                    <%} else if ("Close".equals(t.getStatus())) { %>
+                                    <div  class="btn btn-sm btn-primary">Close</div>
+                                    <%} else {%>
+                                    <div  class="btn btn-sm btn-warning">In Progress</div>
+                                    <%}%>
+                                </td>
                                 <%
                                     Connection con = null;
                                     int id = t.getId();

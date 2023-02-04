@@ -57,7 +57,7 @@
                                                 if ("Pending".equals(ts.getSubTaskStatus())) {%>
                                                 <a href="UpdateStatusServlet?sid=<%=ts.getId()%>&id=<%=t.getId()%>"  ><button class="button-35" ><i class="fa-solid fa-check"></i> Complete</button> </a>
                                             <% } else {%>
-                                           <button  disabled> Complete</button>
+                                           <button  disabled> Completed</button>
                                             <% } %>
 
                                         </td>

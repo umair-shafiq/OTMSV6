@@ -21,6 +21,7 @@ com\otms\servlets\DeleteTaskServlet.class
 com\otms\model\User.class
 com\otms\servlets\DeleteEmployeeServlet.class
 com\otms\dao\AddEmployeeDAO.class
+com\otms\dao\DataCalculateDAO.class
 com\otms\model\Feedback.class
 com\otms\model\SendMail.class
 com\otms\servlets\SubTaskServlet.class

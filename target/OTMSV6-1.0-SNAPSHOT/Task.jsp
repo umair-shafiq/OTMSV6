@@ -107,13 +107,13 @@
                                     <%} else if ("On Hold".equals(t.getStatus())) {%>
                                     <div class="btn btn-sm btn-info "> On Hold</div>
                                     <%} else if ("Fresh".equals(t.getStatus())) {%>
-                                    <a href="#" class="btn btn-sm btn-primary">Fresh</a>
+                                    <div  class="btn btn-sm btn-primary">Fresh</div>
                                     <%} else if ("Pending".equals(t.getStatus())) {%>
-                                    <a href="#" class="btn btn-sm btn-primary">Pending</a>
+                                    <div  class="btn btn-sm btn-primary">Pending</div>
                                     <%} else if ("Close".equals(t.getStatus())) { %>
-                                    <a href="#" class="btn btn-sm btn-primary">Close</a>
+                                    <div  class="btn btn-sm btn-primary">Close</div>
                                     <%} else {%>
-                                    <a href="#" class="btn btn-sm btn-warning">In Progress</a>
+                                    <div  class="btn btn-sm btn-warning">In Progress</div>
                                     <%}%>
                                 </td>
                                 <td>
