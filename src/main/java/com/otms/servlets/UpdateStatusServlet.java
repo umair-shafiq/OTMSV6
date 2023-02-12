@@ -21,24 +21,19 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "UpdateStatusServlet", urlPatterns = {"/UpdateStatusServlet"})
 public class UpdateStatusServlet extends HttpServlet {
 
-  
-
-    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-          HttpSession session = request.getSession();
-        try{
-          int sid = Integer.parseInt(request.getParameter("sid"));
-       int taskid = Integer.parseInt(request.getParameter("id"));
-          //String stat = request.getParameter("Complete");
-          SubTaskDAO taskDao = new SubTaskDAO();
-          taskDao.updateTaskStatus(sid);
-          session.setAttribute("updateStatus", "Status Update Successfully!");
-          response.sendRedirect("ViewSubTask.jsp?id=" + taskid);
-        }catch(Exception e){
-         e.getStackTrace();
+        HttpSession session = request.getSession();
+        try {
+            int sid = Integer.parseInt(request.getParameter("sid"));
+            int taskid = Integer.parseInt(request.getParameter("id"));
+            //String stat = request.getParameter("Complete");
+            SubTaskDAO taskDao = new SubTaskDAO();
+            taskDao.updateTaskStatus(sid);
+            session.setAttribute("updateStatus", "Status Update Successfully!");
+            response.sendRedirect("ViewSubTask.jsp?id=" + taskid);
+        } catch (Exception e) {
+            e.getStackTrace();
         }
     }
-
-    
 
 }

@@ -22,7 +22,7 @@
         <section id="content" class="main-content">
             <%
                 DataCalculateDAO data = new DataCalculateDAO();
-          
+
             %>
 
             <main>
@@ -52,7 +52,7 @@
                             <span><i class="fa-solid fa-list-check"></i></span>
                             <div>
                                 <c:set var="id" value="${Manager.id}" />
-                                <% int id= (int) pageContext.getAttribute("id"); %>
+                                <% int id = (int) pageContext.getAttribute("id");%>
                                 <h5>Total Tasks </h5>
                                 <h4><%=data.totalAssignedTask(id)%></h4>
                             </div>

@@ -9,6 +9,7 @@ package com.otms.model;
  * @author Umair Shafiq
  */
 public class Notification {
+
     public String msg;
 
     public String getMsg() {
@@ -18,5 +19,5 @@ public class Notification {
     public void setMsg(String msg) {
         this.msg = msg;
     }
-    
+
 }

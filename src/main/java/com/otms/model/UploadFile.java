@@ -49,7 +49,5 @@ public class UploadFile {
     public void setTaskID(int taskID) {
         this.taskID = taskID;
     }
-    
-    
 
 }

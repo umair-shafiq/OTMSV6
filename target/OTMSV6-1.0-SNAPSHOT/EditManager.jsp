@@ -21,8 +21,7 @@
 
                 <div class="man-form">
                     <h4 class="man-title">Edit Manager Details</h4>
-                    <%
-                        int id = Integer.parseInt(request.getParameter("id"));
+                    <%                        int id = Integer.parseInt(request.getParameter("id"));
                         AddManagerDAO addManagerDAO = new AddManagerDAO();
                         User u = addManagerDAO.getManagerbyId(id);
                     %>

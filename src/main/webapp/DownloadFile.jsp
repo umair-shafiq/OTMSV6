@@ -34,31 +34,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <%
+                            <%
 
-                            int id = Integer.parseInt(request.getParameter("id"));
-                            TaskDAO taskDAO = new TaskDAO();
-                            List<UploadFile> files = taskDAO.Download(id);
-                            for (UploadFile f : files) {
+                                int id = Integer.parseInt(request.getParameter("id"));
+                                TaskDAO taskDAO = new TaskDAO();
+                                List<UploadFile> files = taskDAO.Download(id);
+                                for (UploadFile f : files) {
 
-                        %>
-                        <tr>
-                            
-                            <td><%=f.getFileName()%> </td>
-                            
-                            <td><%=f.getRemark()%></td>
-                            
-                            <td>
-                                <a href="DownloadFileServlet?fileName=<%=f.getFileName()%>&id=<%=id%>" >Download File</a> 
-                                <c:if test="${not empty fail}">
-                                    <p class="text-center text-danger fs-6">${fail}</p>
-                                    <c:remove var="fail" scope="session"/>
-                                </c:if>
-                            </td>
-                        </tr>
+                            %>
+                            <tr>
 
-                        <%}%>
-                    </tbody>
+                                <td><%=f.getFileName()%> </td>
+
+                                <td><%=f.getRemark()%></td>
+
+                                <td>
+                                    <a href="DownloadFileServlet?fileName=<%=f.getFileName()%>&id=<%=id%>" >Download File</a> 
+                                    <c:if test="${not empty fail}">
+                                        <p class="text-center text-danger fs-6">${fail}</p>
+                                        <c:remove var="fail" scope="session"/>
+                                    </c:if>
+                                </td>
+                            </tr>
+
+                            <%}%>
+                        </tbody>
 
                     </table>
 

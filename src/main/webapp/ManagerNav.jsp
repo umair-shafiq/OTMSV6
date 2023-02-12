@@ -13,16 +13,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Manager</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-       <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="css/Adminnav.css">
-        
+
     </head>
-    
+
     <%-- For Session Validation--%>
     <c:if test="${empty Manager}">
         <c:redirect url="Login.jsp"></c:redirect>
     </c:if>
-    
+
     <body>
         <input type="checkbox" id="sidebar-toggle">
         <section id="sidebar">
@@ -64,14 +64,14 @@
                         <span class="text">Noticeboard</span>
                     </a>
                 </li>
-                
+
                 <li>
                     <a href="ManagerNotification.jsp?id=${Manager.id}" class="btn">
                         <i class="fa-solid fa-bell bs"></i>
                         <span class="text">Notification</span>
                     </a>
                 </li>
-                
+
                 <li>
                     <a href="<%=request.getContextPath()%>/LogoutServlet" class="logout btn" >
                         <i class="fa-solid fa-right-from-bracket bs"></i>
@@ -88,11 +88,11 @@
 
                 <h2 href="#" class="nav-link">Online Task Management System</h2>
 
-                 	<a href="ManagerNotification.jsp?id=${Manager.id}" class="notification">
-                                <span><i class="fa-solid fa-bell"></i></span>
-                                <span class="num" id="notiCountman">0</span>
-                                <div></div>
-                        </a> 
+                <a href="ManagerNotification.jsp?id=${Manager.id}" class="notification">
+                    <span><i class="fa-solid fa-bell"></i></span>
+                    <span class="num" id="notiCountman">0</span>
+                    <div></div>
+                </a> 
                 <p class="ManagerName"> ${Manager.name}</p>
                 <div></div>
 
@@ -131,11 +131,11 @@
                         }
 
                     }
-                     
+
                 });
-                 setTimeout(yourFunction, 5000);
+                setTimeout(yourFunction, 5000);
                 // setInterval(yourFunction, 5000);
-                
+
             }
 
 

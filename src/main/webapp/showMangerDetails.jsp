@@ -40,8 +40,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                                AddManagerDAO addManagerDAO = new AddManagerDAO();
+                            <%                                AddManagerDAO addManagerDAO = new AddManagerDAO();
                                 List<User> users = addManagerDAO.selectAllUsers();
                                 for (User u : users) {%>
                             <tr>

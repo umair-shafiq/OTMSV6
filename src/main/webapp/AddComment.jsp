@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add Comment</title>
-         <link rel="stylesheet" type="text/css" href="css/Admin.css">
+        <link rel="stylesheet" type="text/css" href="css/Admin.css">
     </head>
     <body>
         <%@include file="ManagerNav.jsp" %>
@@ -22,10 +22,10 @@
                 <div class="man-form">
                     <h4 class="man-title">Add Comments On Task</h4>
                     <%
-                                int id = Integer.parseInt(request.getParameter("id"));
-                                TaskDAO taskDAO = new TaskDAO();
-                                Task t = taskDAO.getTaskbyIdForComment(id);
-                            %>
+                        int id = Integer.parseInt(request.getParameter("id"));
+                        TaskDAO taskDAO = new TaskDAO();
+                        Task t = taskDAO.getTaskbyIdForComment(id);
+                    %>
                     <form method="post" action="CommentServlet" id="commentform">
                         <p>Task ID#:</p>
                         <input type="text" required name="taskid" readonly="readonly" value="<%=t.getId()%>" class="input">

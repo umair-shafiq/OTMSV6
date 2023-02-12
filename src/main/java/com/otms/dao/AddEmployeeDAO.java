@@ -24,13 +24,11 @@ public class AddEmployeeDAO {
     Connection con = null;
 
     public int addEmployee(User user) throws ClassNotFoundException, SQLException {
-        
-       
-        
-           String INSERT_USERS_SQL = "INSERT INTO users" + "( u_name, u_email, u_dob, u_gender, u_password, u_address, u_phoneNumber, u_role) VALUES"
+
+        String INSERT_USERS_SQL = "INSERT INTO users" + "( u_name, u_email, u_dob, u_gender, u_password, u_address, u_phoneNumber, u_role) VALUES"
                 + "( ?, ?, ?, ?, ?, ?, ?, 'Employee');";
-          int result = 0;
-        
+        int result = 0;
+
         con = db_connection.connect();
 
         PreparedStatement pst = con.prepareStatement(INSERT_USERS_SQL);
@@ -45,16 +43,15 @@ public class AddEmployeeDAO {
         //pst.setString(8, user.getRole());
 
         result = pst.executeUpdate();
-        
-        
-     return result;
+
+        return result;
     }
 
     //select all users
     public List<User> selectAllUsers() throws ClassNotFoundException {
         List<User> users = new ArrayList<User>();
         User u = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_USERS = "Select * from users Where u_role='Employee'";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_USERS);
 
@@ -103,7 +100,7 @@ public class AddEmployeeDAO {
     //delete user
     public boolean deleteUser(int id) throws ClassNotFoundException {
         boolean rowDeleted = false;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String DELETE_USERS_SQL = "delete from users where id=?;";
             PreparedStatement ps = con.prepareStatement(DELETE_USERS_SQL);
             ps.setInt(1, id);
@@ -114,7 +111,7 @@ public class AddEmployeeDAO {
         }
         return rowDeleted;
     }
-    
+
     //Employee Login By ID
 //    public User loginEmp(String email, String password) throws SQLException, ClassNotFoundException{
 //        User u = null;
@@ -139,4 +136,3 @@ public class AddEmployeeDAO {
 //        return u;        
 //    }
 }
-

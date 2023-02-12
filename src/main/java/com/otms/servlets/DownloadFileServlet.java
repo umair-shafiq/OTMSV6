@@ -55,9 +55,7 @@ public class DownloadFileServlet extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        } 
-        
-        finally {
+        } finally {
             if (fis != null) {
 
                 fis.close();

@@ -21,34 +21,33 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "SubTaskServlet", urlPatterns = {"/SubTaskServlet"})
 public class SubTaskServlet extends HttpServlet {
-    
+
     SubTaskDAO taskDao = new SubTaskDAO();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         HttpSession session = request.getSession();
-        try{
-           
-          int taskid = Integer.parseInt(request.getParameter("taskid"));
-          int userid = Integer.parseInt(request.getParameter("uid"));
-          
-        String subTaskName = request.getParameter("tname");
-        String SubTaskDescription = request.getParameter("Desc");
-         String SubTaskStatus = request.getParameter("status");
-        SubTask st = new SubTask();
-        st.setTaskId(taskid);
-        st.setSubtaskName(subTaskName);
-        st.setSubTaskDescription(SubTaskDescription);
-        st.setSubTaskStatus(SubTaskStatus);
-        System.out.println(taskid);
-        System.out.println(userid);
-        taskDao.AddSubTask(st, userid);
-       
-        session.setAttribute("subMsg", "Sub Task Add Sucessfully!");
-        response.sendRedirect("SubTask.jsp?id=" +taskid+ "&uid=" + userid);
-        }catch(Exception e){
-         e.getStackTrace();
+        HttpSession session = request.getSession();
+        try {
+
+            int taskid = Integer.parseInt(request.getParameter("taskid"));
+            int userid = Integer.parseInt(request.getParameter("uid"));
+
+            String subTaskName = request.getParameter("tname");
+            String SubTaskDescription = request.getParameter("Desc");
+            String SubTaskStatus = request.getParameter("status");
+            SubTask st = new SubTask();
+            st.setTaskId(taskid);
+            st.setSubtaskName(subTaskName);
+            st.setSubTaskDescription(SubTaskDescription);
+            st.setSubTaskStatus(SubTaskStatus);
+            System.out.println(taskid);
+            System.out.println(userid);
+            taskDao.AddSubTask(st, userid);
+
+            session.setAttribute("subMsg", "Sub Task Add Sucessfully!");
+            response.sendRedirect("SubTask.jsp?id=" + taskid + "&uid=" + userid);
+        } catch (Exception e) {
+            e.getStackTrace();
         }
     }
 
-    
 }

@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/Admin.css">
     </head>
     <body>
-       <%@include file="ManagerNav.jsp" %>
+        <%@include file="ManagerNav.jsp" %>
         <section id="content" class="main-content">
             <main>
                 <h4 class="man-title">Employee Details</h4>
@@ -30,24 +30,24 @@
                                 <th>Gender</th>
                                 <th>Address</th>
                                 <th>Contact</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
                             <%
-                                        AddEmployeeDAO addEmployeeDAO = new AddEmployeeDAO();
-                                        List<User> users = addEmployeeDAO.selectAllUsers();
-                                        for (User u : users) {%>
+                                AddEmployeeDAO addEmployeeDAO = new AddEmployeeDAO();
+                                List<User> users = addEmployeeDAO.selectAllUsers();
+                                for (User u : users) {%>
                             <tr>
                                 <td><%= u.getName()%></td>
-                                        <td><%= u.getEmail()%></td>
-                                        <td><%= u.getDob()%></td>
-                                        <td><%= u.getGender()%></td>
-                                        <td><%= u.getAddress()%></td>
-                                        <td><%= u.getContact()%></td>
-                                
+                                <td><%= u.getEmail()%></td>
+                                <td><%= u.getDob()%></td>
+                                <td><%= u.getGender()%></td>
+                                <td><%= u.getAddress()%></td>
+                                <td><%= u.getContact()%></td>
+
                             </tr>
-                           <% } %> 
+                            <% }%> 
                         </tbody>
                     </table>
                 </div>

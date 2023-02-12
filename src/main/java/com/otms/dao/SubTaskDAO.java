@@ -37,14 +37,14 @@ public class SubTaskDAO {
         pst.setInt(5, userid);
         result = pst.executeUpdate();
         return result;
-       
+
     }
 
     //select all Sub task
     public List<SubTask> selectAllSubTask(int id) throws ClassNotFoundException {
         List<SubTask> subtask = new ArrayList<SubTask>();
         SubTask st = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_Comments = "Select * from subtask where task_id=?";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_Comments);
             preparedStatement.setInt(1, id);
@@ -89,7 +89,7 @@ public class SubTaskDAO {
     public List<SubTask> selectAllSubTaskByID(int id) throws ClassNotFoundException {
         List<SubTask> subtask = new ArrayList<SubTask>();
         SubTask st = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String sql = "Select * from subtask where task_id=?";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setInt(1, id);

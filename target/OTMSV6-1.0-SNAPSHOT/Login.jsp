@@ -43,7 +43,7 @@
             swal("logged Out", "You have logged out Successfully!", "success");
                 <c:remove var="logout" scope="session"/>
             </c:if>
-            
+
             <c:if test="${not empty errorMsg}">
             swal("Try Again!", "Invalid Email Or Password!", "error");
                 <c:remove var="errorMsg" scope="session"/>

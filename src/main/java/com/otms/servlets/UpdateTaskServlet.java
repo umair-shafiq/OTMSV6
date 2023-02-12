@@ -32,12 +32,11 @@ public class UpdateTaskServlet extends HttpServlet {
         String description = request.getParameter("description");
         String sdate = request.getParameter("sdate");
         String edate = request.getParameter("edate");
-        
+
         //String assignEmp = request.getParameter("assignEmp");
         String status = request.getParameter("status");
         int emp_id = Integer.parseInt(request.getParameter("assignEmp"));
         int priority = Integer.parseInt(request.getParameter("priority"));
-        
 
         int id = Integer.parseInt(request.getParameter("id"));
 
@@ -47,12 +46,11 @@ public class UpdateTaskServlet extends HttpServlet {
         task.setDescription(description);
         task.setSdate(sdate);
         task.setEdate(edate);
-       
+
         //task.setAssignEmp(assignEmp);
         task.setStatus(status);
         task.setEmp_id(emp_id);
         task.setPriority(priority);
-        
 
         try {
             taskDAO.updateTask(task);

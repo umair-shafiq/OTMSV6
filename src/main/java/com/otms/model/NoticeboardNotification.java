@@ -8,7 +8,6 @@ package com.otms.model;
  *
  * @author Umair Shafiq
  */
-
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -20,6 +19,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class NoticeboardNotification {
+
     public static void main(String[] args) {
 
         // Recipient's email ID needs to be mentioned.
@@ -77,7 +77,6 @@ public class NoticeboardNotification {
                     + " Thank you for your attention to this matter.\n"
                     + "\n"
                     + "Regards,\n"
-                    
                     + "Online Task Management System"
             );
 

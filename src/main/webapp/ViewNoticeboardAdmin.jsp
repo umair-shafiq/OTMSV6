@@ -21,8 +21,7 @@
             <main>
                 <div class="tastTitle">
                     <h1>OTMS Noticeboard - News</h1>
-                    <%
-                        NoticeboardDAO noticeboardDAO = new NoticeboardDAO();
+                    <%                        NoticeboardDAO noticeboardDAO = new NoticeboardDAO();
                         List<Noticeboard> notices = noticeboardDAO.selectAllNotice();
                         for (Noticeboard n : notices) {
                     %>
@@ -33,7 +32,7 @@
                             <p><%= n.getNotice()%></p>
                         </div>
                     </div>
-                      <% }%>
+                    <% }%>
                 </div>
             </main>
         </section>

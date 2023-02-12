@@ -36,44 +36,44 @@
                                 <th scope="col" >Action</th>
                             </tr>
                         </thead>
-                        
+
                         <tbody>
                             <%
-                                        int id = Integer.parseInt(request.getParameter("id"));
-                                        TaskDAO taskDAO = new TaskDAO();
-                                        Task t = taskDAO.getTaskbyId(id);
-                                        SubTaskDAO subtaskDAO = new SubTaskDAO();
-                                        List<SubTask> comments = subtaskDAO.selectAllSubTask(id);
-                                        for (SubTask ts : comments) {
-                                    %>
-                                    <tr>
+                                int id = Integer.parseInt(request.getParameter("id"));
+                                TaskDAO taskDAO = new TaskDAO();
+                                Task t = taskDAO.getTaskbyId(id);
+                                SubTaskDAO subtaskDAO = new SubTaskDAO();
+                                List<SubTask> comments = subtaskDAO.selectAllSubTask(id);
+                                for (SubTask ts : comments) {
+                            %>
+                            <tr>
 
-                                        <td><%=ts.getTaskId()%></td>
-                                        <td><%=ts.getSubtaskName()%></td>
-                                        <td><%=ts.getSubTaskDescription()%></td>
-                                        <td><%=ts.getSubTaskStatus()%> </td>
-                                        <td>
-                                            <%
+                                <td><%=ts.getTaskId()%></td>
+                                <td><%=ts.getSubtaskName()%></td>
+                                <td><%=ts.getSubTaskDescription()%></td>
+                                <td><%=ts.getSubTaskStatus()%> </td>
+                                <td>
+                                    <%
                                                 if ("Pending".equals(ts.getSubTaskStatus())) {%>
-                                                <a href="UpdateStatusServlet?sid=<%=ts.getId()%>&id=<%=t.getId()%>"  ><button class="button-35" ><i class="fa-solid fa-check"></i> Complete</button> </a>
-                                            <% } else {%>
-                                           <button  disabled> Completed</button>
-                                            <% } %>
+                                    <a href="UpdateStatusServlet?sid=<%=ts.getId()%>&id=<%=t.getId()%>"  ><button class="button-35" ><i class="fa-solid fa-check"></i> Complete</button> </a>
+                                    <% } else {%>
+                                    <button  disabled> Completed</button>
+                                    <% } %>
 
-                                        </td>
-                                    </tr>
-                                    <%}%>
+                                </td>
+                            </tr>
+                            <%}%>
                         </tbody>
                     </table>
                 </div>
             </main>
         </section>
-                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                        <script>
-                             <c:if test="${not empty updateStatus}">
-            swal("Complete", "Status Update Successfully!", "success");
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            <c:if test="${not empty updateStatus}">
+                            swal("Complete", "Status Update Successfully!", "success");
                 <c:remove var="updateStatus" scope="session"/>
             </c:if>
-                        </script>
+        </script>
     </body>
 </html>

@@ -26,8 +26,8 @@ public class LogoutServlet extends HttpServlet {
         if (session != null) //If session is not null
         {
             session.removeAttribute("Admin");
-          //  session.invalidate(); //removes all session attributes bound to the session
-           session.setAttribute("logout", "You have logged out Successfully!");
+            //  session.invalidate(); //removes all session attributes bound to the session
+            session.setAttribute("logout", "You have logged out Successfully!");
             response.sendRedirect("Login.jsp");
 
         }

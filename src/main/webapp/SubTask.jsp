@@ -21,7 +21,7 @@
         <section id="content" class="main-content">
             <main>
                 <%int id = Integer.parseInt(request.getParameter("id"));
-                int uid = Integer.parseInt(request.getParameter("uid"));
+                    int uid = Integer.parseInt(request.getParameter("uid"));
                 %>
                 <div >
                     <a href="AddSubtask.jsp?id=<%=id%>&uid=<%=uid%>" ><button type="button" class="button-24"><i class="fa-solid fa-plus fa-lg"></i> Add New SubTask</button></a>  
@@ -58,7 +58,7 @@
                 </div>
             </main>
         </section>
-                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>       
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>       
         <script>
             <%--<%@include file="js/adminJavaScripit.js" %>--%>
             <c:if test="${not empty subMsg}">

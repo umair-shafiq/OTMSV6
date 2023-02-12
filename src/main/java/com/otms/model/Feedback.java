@@ -9,6 +9,7 @@ package com.otms.model;
  * @author Umair Shafiq
  */
 public class Feedback {
+
     private int id;
     private int taskId;
     private String subject;
@@ -64,6 +65,5 @@ public class Feedback {
     public void setDate(String date) {
         this.date = date;
     }
-    
-    
+
 }

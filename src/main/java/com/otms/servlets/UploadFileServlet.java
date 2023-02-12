@@ -37,19 +37,18 @@ public class UploadFileServlet extends HttpServlet {
         Part p = request.getPart("files");
         String fileName = p.getSubmittedFileName();
         String remark = request.getParameter("remark");
-        
-        //System.out.println(fileName + "" + remark);
 
+        //System.out.println(fileName + "" + remark);
         UploadFile file = new UploadFile();
         file.setTaskID(taskid);
         file.setFileName(fileName);
         file.setRemark(remark);
-        
-          String uploadpath = "E:/Java/OTMSV6/src/main/webapp/UploadFile/" ;
+
+        String uploadpath = "E:/Java/OTMSV6/src/main/webapp/UploadFile/";
 //        
-          File f = new File(uploadpath);
-           p.write(uploadpath + File.separator + fileName);
-           System.out.println(uploadpath);
+        File f = new File(uploadpath);
+        p.write(uploadpath + File.separator + fileName);
+        System.out.println(uploadpath);
         try {
             taskDao.uploadFile(file);
         } catch (ClassNotFoundException ex) {
@@ -57,10 +56,10 @@ public class UploadFileServlet extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(UploadFileServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         HttpSession session = request.getSession();
         session.setAttribute("sucMsg", "File Upload Sucessfully!");
-        response.sendRedirect("EmployeeTaskDetails.jsp?id="+ taskid);
+        response.sendRedirect("EmployeeTaskDetails.jsp?id=" + taskid);
     }
 
 }

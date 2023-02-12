@@ -16,11 +16,12 @@ import java.sql.ResultSet;
  * @author Umair Shafiq
  */
 public class CompleteTaskNoti {
+
     public static void main(int subid, String subname, int taskid, int userid) throws AWTException {
         try {
             if (SystemTray.isSupported()) {
                 CompleteTaskNoti td = new CompleteTaskNoti();
-                td.displayTray( subid, subname, taskid, userid);
+                td.displayTray(subid, subname, taskid, userid);
 
 //            td.displayTray();
                 System.out.println("is working");
@@ -36,7 +37,7 @@ public class CompleteTaskNoti {
     Connection con = null;
     ResultSet rs = null;
 
-    public void displayTray(int subid, String subname,  int taskid, int userid) throws AWTException, ClassNotFoundException {
+    public void displayTray(int subid, String subname, int taskid, int userid) throws AWTException, ClassNotFoundException {
         //Obtain only one instance of the SystemTray object
         SystemTray tray = SystemTray.getSystemTray();
         System.out.println(subname);
@@ -53,17 +54,17 @@ public class CompleteTaskNoti {
         tray.add(trayIcon);
 
         String displayMsg = subname + " " + "This SubTask Has Been Complete Succssfully!";
-          System.out.println("1");
+        System.out.println("1");
         trayIcon.displayMessage(subname, displayMsg, MessageType.INFO);
-String subStatus="Pending";
+        String subStatus = "Pending";
         try {
             con = db_connection.connect();
             if (subStatus != "Complete") {
 
-                String sql = ("update subtask set is_completed=1 where id="+subid+"");
+                String sql = ("update subtask set is_completed=1 where id=" + subid + "");
                 PreparedStatement ps = con.prepareStatement(sql);
-               int res=ps.executeUpdate();
-               System.out.println(res);
+                int res = ps.executeUpdate();
+                System.out.println(res);
             }
 
         } catch (Exception e) {

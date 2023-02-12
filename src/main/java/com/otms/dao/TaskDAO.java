@@ -24,6 +24,7 @@ import java.util.List;
 public class TaskDAO {
 
     Connection con = null;
+
     //Statement stmt = null;
     public int addTask(Task t) throws ClassNotFoundException, SQLException {
 
@@ -47,10 +48,10 @@ public class TaskDAO {
         ResultSet rs = pst.getGeneratedKeys();
         int last_inserted_id = 0;
         if (rs.next()) {
-             last_inserted_id = rs.getInt(1);
-           // System.out.println(last_inserted_id );
+            last_inserted_id = rs.getInt(1);
+            // System.out.println(last_inserted_id );
         }
-           rs.close();
+        rs.close();
         con = db_connection.connect();
         String msg = "Task has been Assigned to you by manager";
         String sql = "insert into notification (man, emp, task_id, message,for_user) values (?,?,?,?,?)";
@@ -347,7 +348,7 @@ public class TaskDAO {
         try (Connection con = db_connection.connect()) {
 
             String sql = "SELECT message FROM notification where for_user = ? and is_read=1 order by id desc;";
-           
+
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, id);
@@ -365,7 +366,7 @@ public class TaskDAO {
         }
         return notifications;
     }
-    
+
     //Showing Notifications to Manager On Completing Sub Task 
     //****************************************************************************************
     public List<Notification> complateSubTaskNoti(int id) throws ClassNotFoundException {
@@ -374,7 +375,7 @@ public class TaskDAO {
         try (Connection con = db_connection.connect()) {
 
             String sql = "SELECT msg FROM subtask where for_user = ? and is_completed=1 order by id desc;";
-           
+
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, id);

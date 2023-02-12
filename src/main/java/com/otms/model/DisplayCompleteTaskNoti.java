@@ -16,6 +16,7 @@ import java.sql.ResultSet;
  * @author Umair Shafiq
  */
 public class DisplayCompleteTaskNoti {
+
     public static void main(String msg, int taskid) throws AWTException {
         try {
             if (SystemTray.isSupported()) {
@@ -54,7 +55,7 @@ public class DisplayCompleteTaskNoti {
 
         String displayMsg = msg;
 
-        trayIcon.displayMessage( displayMsg,"", MessageType.INFO);
+        trayIcon.displayMessage(displayMsg, "", MessageType.INFO);
 
         try {
             con = db_connection.connect();

@@ -26,10 +26,10 @@ public class db_connection {
         con = DriverManager.getConnection(url, username, password);
         return con;
     }
-    
-    public void close() throws SQLException{
-		if (con != null){
-			con.close();
-		}
-	}
+
+    public void close() throws SQLException {
+        if (con != null) {
+            con.close();
+        }
+    }
 }

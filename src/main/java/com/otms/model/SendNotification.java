@@ -61,7 +61,7 @@ public class SendNotification {
             con = db_connection.connect();
             if (taskid != 0) {
 
-                String sql = ("UPDATE notification SET is_read=1,is_pending=1, is_read_on=NOW(),is_read_by="+userid+" WHERE task_id=" + taskid + "");
+                String sql = ("UPDATE notification SET is_read=1,is_pending=1, is_read_on=NOW(),is_read_by=" + userid + " WHERE task_id=" + taskid + "");
                 PreparedStatement ps = con.prepareStatement(sql);
                 ps.executeUpdate();
             }

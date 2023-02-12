@@ -26,7 +26,7 @@
                         int id = Integer.parseInt(request.getParameter("id"));
                         TaskDAO taskDAO = new TaskDAO();
                         List<Notification> noti = taskDAO.noti(id);
-                                        for (Notification nts : noti) {
+                        for (Notification nts : noti) {
                     %>
                     <div class="notice-container">
                         <!--<div class="notice-title">Title: </div>-->
@@ -35,7 +35,7 @@
                             <p><%=nts.getMsg()%></p>
                         </div>
                     </div>
-                      <% }%>
+                    <% }%>
                 </div>
             </main>
         </section>

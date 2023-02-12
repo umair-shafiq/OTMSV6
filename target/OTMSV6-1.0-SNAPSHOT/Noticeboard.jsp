@@ -38,7 +38,7 @@
                             <%
                                 NoticeboardDAO noticeboardDAO = new NoticeboardDAO();
                                 List<Noticeboard> notices = noticeboardDAO.selectAllNotice();
-                                 for (Noticeboard n : notices) {%>
+                                for (Noticeboard n : notices) {%>
                             <tr>
                                 <td><%= n.getTitle()%></td>
                                 <td><%= n.getNotice()%></td>
@@ -55,20 +55,20 @@
                 </div>
             </main>
         </section>
-                        
-       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
-            
+
             <c:if test="${not empty sucMsg}">
             swal("Done!", "Add Notice Sucessfully!", "success");
                 <c:remove var="sucMsg" scope="session"/>
             </c:if>
-                
+
             <c:if test="${not empty EditSucMsg}">
             swal("Updated", "Notice update Sucessfuly!", "success");
                 <c:remove var="EditSucMsg" scope="session"/>
             </c:if>
-                
+
             <c:if test="${not empty delMsg}">
             swal("Done!", "Notice Delete Sucessfully!", "success");
                 <c:remove var="delMsg" scope="session"/>

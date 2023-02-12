@@ -20,16 +20,16 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "AdminLogoutServlet", urlPatterns = {"/AdminLogoutServlet"})
 public class AdminLogoutServlet extends HttpServlet {
 
-       protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-       //System.out.println("The current session is : "+session);
-    //   Object store = session.getAttribute("Admin");
-       session.removeAttribute("Admin");
-      // System.out.println("Sessssss"+store);
-      // session.invalidate();
+        //System.out.println("The current session is : "+session);
+        //   Object store = session.getAttribute("Admin");
+        session.removeAttribute("Admin");
+        // System.out.println("Sessssss"+store);
+        // session.invalidate();
         session.setAttribute("logout", "You have logged out Successfully!");
-            response.sendRedirect("Login.jsp");
+        response.sendRedirect("Login.jsp");
     }
 
 }

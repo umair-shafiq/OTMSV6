@@ -40,7 +40,7 @@ public class CommentDAO {
     public List<Comment> selectAllComment(int id) throws ClassNotFoundException {
         List<Comment> comments = new ArrayList<Comment>();
         Comment c = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_Comments = "Select * from comment where task_id=?";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_Comments);
             preparedStatement.setInt(1, id);
@@ -59,12 +59,12 @@ public class CommentDAO {
         }
         return comments;
     }
-    
+
     //Show Comments to user By TaskId
     public List<Comment> showComment(int id) throws ClassNotFoundException {
         List<Comment> comments = new ArrayList<Comment>();
         Comment c = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_Comments = "Select comment from comment where task_id=?";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_Comments);
             preparedStatement.setInt(1, id);
@@ -73,7 +73,7 @@ public class CommentDAO {
             while (rs.next()) {
                 c = new Comment();
                 c.setTaskId(rs.getInt(2));
-                
+
                 c.setComment(rs.getString(5));
                 comments.add(c);
             }

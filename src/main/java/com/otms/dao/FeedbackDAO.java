@@ -17,8 +17,9 @@ import java.util.List;
  * @author Umair Shafiq
  */
 public class FeedbackDAO {
+
     Connection con = null;
-    
+
     public int addFeedback(Feedback fb) throws ClassNotFoundException, SQLException {
         String sql = "INSERT INTO feedback( task_id, subject, feedback) VALUES ( ?, ?, ?)";
 
@@ -32,12 +33,12 @@ public class FeedbackDAO {
         result = pst.executeUpdate();
         return result;
     }
-    
-     //Show Feedback to user By TaskId
+
+    //Show Feedback to user By TaskId
     public List<Feedback> showFeedback(int id) throws ClassNotFoundException {
         List<Feedback> comments = new ArrayList<Feedback>();
         Feedback fb = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_Feedbacks = "Select * from feedback where task_id=?";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_Feedbacks);
             preparedStatement.setInt(1, id);
@@ -46,7 +47,7 @@ public class FeedbackDAO {
             while (rs.next()) {
                 fb = new Feedback();
                 fb.setTaskId(rs.getInt(2));
-                
+
                 fb.setSubject(rs.getString(3));
                 fb.setFeedback(rs.getString(4));
                 fb.setDate(rs.getTimestamp(5) + "");

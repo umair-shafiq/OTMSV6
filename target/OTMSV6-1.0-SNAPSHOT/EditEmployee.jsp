@@ -21,11 +21,10 @@
 
                 <div class="man-form">
                     <h4 class="man-title">Edit Employee Details</h4>
-                    <%
-                                int id = Integer.parseInt(request.getParameter("id"));
-                                AddManagerDAO addManagerDAO = new AddManagerDAO();
-                                User u = addManagerDAO.getManagerbyId(id);
-                            %>
+                    <%                        int id = Integer.parseInt(request.getParameter("id"));
+                        AddManagerDAO addManagerDAO = new AddManagerDAO();
+                        User u = addManagerDAO.getManagerbyId(id);
+                    %>
                     <form method="post" action="UpdateEmployeeServlet">
                         <p>Full Name:</p>
                         <input type="text" required name="name" placeholder="Full Name" class="input" value="<%=u.getName()%>">
@@ -35,14 +34,14 @@
                         <input type="date" required name="dob" placeholder="Date of Birth" class="input" value="<%=u.getDob()%>">
                         <p>Gender:</p>
                         <c:set var="gender" value="<%=u.getGender()%>"/>
-                         <label class="input">Male
-                          <input type="radio" name="gender" value="male"  <c:if test="${gender=='male'}">checked</c:if>>
-                          </label>
-                         <label class="input">Female
-                          <input type="radio" name="gender" value="female" <c:if test="${gender=='female'}">checked</c:if>>
-                          </label>
-                        <p>Set Password:</p>
-                        <input type="text" required name="password" placeholder="Set Password" class="input" value="<%=u.getPassword()%>">
+                        <label class="input">Male
+                            <input type="radio" name="gender" value="male"  <c:if test="${gender=='male'}">checked</c:if>>
+                            </label>
+                            <label class="input">Female
+                                <input type="radio" name="gender" value="female" <c:if test="${gender=='female'}">checked</c:if>>
+                            </label>
+                            <p>Set Password:</p>
+                            <input type="text" required name="password" placeholder="Set Password" class="input" value="<%=u.getPassword()%>">
                         <p>Address:</p>
                         <input type="text" required name="address" placeholder="Adress" class="input" value="<%=u.getAddress()%>">
                         <p>Phone Number:</p>

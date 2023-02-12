@@ -25,15 +25,15 @@
                         <p class="alert alert-success" role="alert">${sucMsg}</p>
                         <c:remove var="sucMsg" scope="session"/>
                     </c:if>
-                        
-                                                    <%
-                                int id = Integer.parseInt(request.getParameter("id"));
-                                NoticeboardDAO noticeboardDAO = new NoticeboardDAO();
-                                Noticeboard n = noticeboardDAO.getNoticebyId(id);
-                            %>
-                            
+
+                    <%
+                        int id = Integer.parseInt(request.getParameter("id"));
+                        NoticeboardDAO noticeboardDAO = new NoticeboardDAO();
+                        Noticeboard n = noticeboardDAO.getNoticebyId(id);
+                    %>
+
                     <form method="post" action="UpdateNoticeServlet" id="usrform">
-                         <input type="hidden" name="id" value="<%=n.getId()%>">
+                        <input type="hidden" name="id" value="<%=n.getId()%>">
                         <p>Title:</p>
                         <input type="text" required name="title" placeholder="Title" class="input" value="<%=n.getTitle()%>">
                         <p>Notice:</p>

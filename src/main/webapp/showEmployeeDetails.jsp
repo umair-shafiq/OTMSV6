@@ -37,8 +37,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                                AddEmployeeDAO addEmployeeDAO = new AddEmployeeDAO();
+                            <%                                AddEmployeeDAO addEmployeeDAO = new AddEmployeeDAO();
                                 List<User> users = addEmployeeDAO.selectAllUsers();
                                 for (User u : users) {%>
                             <tr>
@@ -61,17 +60,17 @@
         </section>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
-            
+
             <c:if test="${not empty sucMsg}">
             swal("Congrats", "Account created Sucessfuly", "success");
                 <c:remove var="sucMsg" scope="session"/>
             </c:if>
-                
+
             <c:if test="${not empty EditSucMsg}">
             swal("Updated", "User Data update Sucessfuly!", "success");
                 <c:remove var="EditSucMsg" scope="session"/>
             </c:if>
-                
+
             <c:if test="${not empty delMsg}">
             swal("Done!", "Employee Delete Sucessfully!", "success");
                 <c:remove var="delMsg" scope="session"/>

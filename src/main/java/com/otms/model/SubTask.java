@@ -9,6 +9,7 @@ package com.otms.model;
  * @author Umair Shafiq
  */
 public class SubTask {
+
     private int id;
     private int taskId;
     private String SubtaskName;
@@ -17,7 +18,6 @@ public class SubTask {
 
     public SubTask() {
     }
-    
 
     public int getId() {
         return id;
@@ -58,6 +58,5 @@ public class SubTask {
     public void setSubTaskStatus(String SubTaskStatus) {
         this.SubTaskStatus = SubTaskStatus;
     }
-    
-    
+
 }

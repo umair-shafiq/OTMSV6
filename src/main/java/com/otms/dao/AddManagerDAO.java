@@ -49,7 +49,7 @@ public class AddManagerDAO {
     public List<User> selectAllUsers() throws ClassNotFoundException {
         List<User> users = new ArrayList<User>();
         User u = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_USERS = "Select * from users Where u_role='Manager'";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_USERS);
 
@@ -75,7 +75,7 @@ public class AddManagerDAO {
     //Edit Manager by ID
     public User getManagerbyId(int id) throws ClassNotFoundException {
         User u = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
 
             String sql = "select * from users where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -129,7 +129,7 @@ public class AddManagerDAO {
     //delete user
     public boolean deleteUser(int id) throws ClassNotFoundException {
         boolean rowDeleted = false;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String DELETE_USERS_SQL = "delete from users where id=?;";
             PreparedStatement ps = con.prepareStatement(DELETE_USERS_SQL);
             ps.setInt(1, id);
@@ -145,7 +145,7 @@ public class AddManagerDAO {
     public List<User> selectAllEmployee() throws ClassNotFoundException {
         List<User> users = new ArrayList<User>();
         User u = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_USERS = "Select * from users Where u_role='Manager'";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_USERS);
 
@@ -167,14 +167,14 @@ public class AddManagerDAO {
         }
         return users;
     }
-    
-        public int totalEmployee() throws SQLException{
-        int result=0;
+
+    public int totalEmployee() throws SQLException {
+        int result = 0;
         PreparedStatement pst = con.prepareStatement("select count(*) from users where u_role='Employee'");
-            ResultSet rs = pst.executeQuery();
-            // Get the count
-            rs.next();
-            result = rs.getInt(1);
+        ResultSet rs = pst.executeQuery();
+        // Get the count
+        rs.next();
+        result = rs.getInt(1);
         return result;
     }
 

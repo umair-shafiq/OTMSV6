@@ -18,12 +18,12 @@
         <link rel="stylesheet" type="text/css" href="css/Adminnav.css">
 
     </head>
-    
+
     <%-- For Session Validation--%>
     <c:if test="${empty Employee}">
         <c:redirect url="Login.jsp"></c:redirect>
     </c:if>
-    
+
     <body>
         <input type="checkbox" id="sidebar-toggle">
         <section id="sidebar">

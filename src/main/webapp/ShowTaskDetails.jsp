@@ -40,21 +40,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <%
-                                TaskDAO taskDAO = new TaskDAO();
-                                List<Task> tasks = taskDAO.selectAllTasks();
-                                for (Task t : tasks) {%>
-                            <tr>
-                                <td> <%= t.getId()%> </td>
-                                <td><%= t.getName()%></td>
-                                <td><%= t.getDescription()%></td>
-                                <td><%= t.getSdate()%></td>
-                                <td><%= t.getEdate()%></td>
-                                <td><%= t.getAssignBy()%></td>
-                                <td><%= t.getAssignEmp()%></td>
-                                <td><%= t.getStatus()%></td>
-                            </tr>
-                                
+                                <%                                    TaskDAO taskDAO = new TaskDAO();
+                                    List<Task> tasks = taskDAO.selectAllTasks();
+                                    for (Task t : tasks) {%>
+                                <tr>
+                                    <td> <%= t.getId()%> </td>
+                                    <td><%= t.getName()%></td>
+                                    <td><%= t.getDescription()%></td>
+                                    <td><%= t.getSdate()%></td>
+                                    <td><%= t.getEdate()%></td>
+                                    <td><%= t.getAssignBy()%></td>
+                                    <td><%= t.getAssignEmp()%></td>
+                                    <td><%= t.getStatus()%></td>
+                                </tr>
+
                                 <% }%>  
                             </tbody>
                         </table>
@@ -62,8 +61,8 @@
                 </div>
             </main>
         </section>
-         <script>
-             <%@include file="js/adminJavaScripit.js" %>
-         </script>
+        <script>
+            <%@include file="js/adminJavaScripit.js" %>
+        </script>
     </body>
 </html>

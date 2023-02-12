@@ -9,5 +9,5 @@ package com.otms.servlets;
  * @author Umair Shafiq
  */
 class UserServlet {
-    
+
 }

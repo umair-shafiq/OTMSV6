@@ -34,7 +34,7 @@
                             <p><%= n.getNotice()%></p>
                         </div>
                     </div>
-                      <% }%>
+                    <% }%>
                 </div>
             </main>
         </section>

@@ -19,7 +19,7 @@
 
                 <div class="man-form">
                     <h4 class="man-title">Add Employee</h4>
-                    
+
                     <form method="post" action="AddEmployeeServlet">
                         <p>Full Name:</p>
                         <input type="text" required name="name" placeholder="Full Name" class="input">
@@ -28,12 +28,12 @@
                         <p>Date of Birth:</p>
                         <input type="date" required name="dob" placeholder="Date of Birth" class="input">
                         <p>Gender:</p>
-                         <label class="input">Male
-                          <input type="radio" name="gender" value="male" >
-                          </label>
-                         <label class="input">Female
-                          <input type="radio" name="gender" value="female">
-                          </label>
+                        <label class="input">Male
+                            <input type="radio" name="gender" value="male" >
+                        </label>
+                        <label class="input">Female
+                            <input type="radio" name="gender" value="female">
+                        </label>
                         <p>Set Password:</p>
                         <input type="password" required name="password" placeholder="Set Password" class="input">
                         <p>Address:</p>
@@ -45,9 +45,9 @@
                 </div>
             </main>
         </section>
-         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
-              
+
             <c:if test="${not empty errMsg}">
             swal("Try Again", "Email Already Exists!", "error");
                 <c:remove var="errMsg" scope="session"/>

@@ -28,7 +28,7 @@
                         <input type="text" required name="name" placeholder="Task Name" class="input">
                         <p>Description:</p>
                         <textarea rows="4" cols="50" name="description" form="addTask" placeholder="Enter text here..." class="input"></textarea>
-                        
+
                         <p>Start Date:</p>
                         <input type="date" required name="sdate" placeholder="Start Date" class="input">
                         <p>End Date:</p>
@@ -39,29 +39,29 @@
                         <p>Assigning Employee:</p>
                         <select name="assignEmp" multiple>
                             <option>--Select--</option>
-                                        <%
-                                            AddEmployeeDAO addEmployeeDAO = new AddEmployeeDAO();
-                                            List<User> users = addEmployeeDAO.selectAllUsers();
-                                            for (User u : users) {%>
-                                        <option value="<%=u.getId() %>"><%=u.getName()%></option>    <%--value="<%=u.getId()%>"--%>
-                                        <% } %>
+                            <%
+                                AddEmployeeDAO addEmployeeDAO = new AddEmployeeDAO();
+                                List<User> users = addEmployeeDAO.selectAllUsers();
+                                for (User u : users) {%>
+                            <option value="<%=u.getId()%>"><%=u.getName()%></option>    <%--value="<%=u.getId()%>"--%>
+                            <% }%>
                         </select>
-                        
+
                         <p>Status:</p>
                         <select name="status" id="status" >
-                                        <option>Fresh</option>
-                                        <option>On Hold</option>
-                                        <option>Pending</option>
-                                        <option>Close</option>
-                                    </select>
+                            <option>Fresh</option>
+                            <option>On Hold</option>
+                            <option>Pending</option>
+                            <option>Close</option>
+                        </select>
                         <p>Set Priority:</p>
                         <select name="priority" id="priority" >
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
                         <button type="submit" >Add Task</button>
                     </form>
                 </div>

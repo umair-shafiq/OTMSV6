@@ -40,29 +40,29 @@ public class TaskServlet extends HttpServlet {
         String emp_id[] = request.getParameterValues("assignEmp");
         int man_id = Integer.parseInt(request.getParameter("man_id"));
         int priority = Integer.parseInt(request.getParameter("priority"));
-        for(int i = 0; i < emp_id.length; i++){
+        for (int i = 0; i < emp_id.length; i++) {
             Task t = new Task();
-        t.setName(name);
-        t.setDescription(description);
-        t.setSdate(sdate);
-        t.setEdate(edate);
-        t.setAssignBy(assignBy);
-       // t.setAssignEmp(assignEmp);
-        t.setStatus(status);
-        t.setEmp_id(Integer.parseInt(emp_id[i]));
-        t.setMan_id(man_id);
-        t.setPriority(priority);
-         
-        try {
-            taskDAO.addTask(t);
-            SendMail.main(new String[0]);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(TaskServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(TaskServlet.class.getName()).log(Level.SEVERE, null, ex);
+            t.setName(name);
+            t.setDescription(description);
+            t.setSdate(sdate);
+            t.setEdate(edate);
+            t.setAssignBy(assignBy);
+            // t.setAssignEmp(assignEmp);
+            t.setStatus(status);
+            t.setEmp_id(Integer.parseInt(emp_id[i]));
+            t.setMan_id(man_id);
+            t.setPriority(priority);
+
+            try {
+                taskDAO.addTask(t);
+                SendMail.main(new String[0]);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaskServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(TaskServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        }
-        
+
         HttpSession session = request.getSession();
         session.setAttribute("sucMsg", "Add Task Sucessfully!");
         response.sendRedirect("Task.jsp");

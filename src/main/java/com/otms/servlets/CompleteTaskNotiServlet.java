@@ -48,7 +48,7 @@ public class CompleteTaskNotiServlet extends HttpServlet {
             ArrayList arrayList = new ArrayList();
             con = db_connection.connect();
             // Statement st1 = con.createStatement();
-            String sql = "select id, task_id, sub_name from subtask where for_user="+userid+" and sub_status='Complete' and is_completed=0";
+            String sql = "select id, task_id, sub_name from subtask where for_user=" + userid + " and sub_status='Complete' and is_completed=0";
             PreparedStatement ps = con.prepareStatement(sql,
                     ResultSet.TYPE_SCROLL_SENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
@@ -58,19 +58,19 @@ public class CompleteTaskNotiServlet extends HttpServlet {
             String subname = "";
             int taskid = 0;
 
-            PreparedStatement pst = con.prepareStatement("select count(*) from subtask where for_user = "+userid+" and sub_status='Complete' and is_completed=0");
+            PreparedStatement pst = con.prepareStatement("select count(*) from subtask where for_user = " + userid + " and sub_status='Complete' and is_completed=0");
             ResultSet rs = pst.executeQuery();
             // Get the count
             rs.next();
             int count = rs.getInt(1);
             // Print the count
             System.out.println("Number of rows in table : " + count);
-            
-            if (count > 0 ) {
+
+            if (count > 0) {
                 while (rs1.next()) {
                     subid = rs1.getInt("id");
                     subname = rs1.getString("sub_name");
-                    
+
                     taskid = rs1.getInt("task_id");
 
                     JSONObject row = new JSONObject();

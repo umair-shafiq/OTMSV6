@@ -19,7 +19,7 @@
 
                 <div class="man-form">
                     <h4 class="man-title">Add Manager</h4>
-                    
+
                     <form method="post" action="AddManagerServlet">
                         <p>Full Name:</p>
                         <input type="text" required name="name" placeholder="Full Name" class="input">

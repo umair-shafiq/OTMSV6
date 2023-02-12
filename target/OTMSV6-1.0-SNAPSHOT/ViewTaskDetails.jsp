@@ -27,12 +27,12 @@
                     <h1>Tasks Details</h1>
                 </div>
                 <%
-                int id = Integer.parseInt(request.getParameter("id"));
-                TaskDAO taskDAO = new TaskDAO();
-                Task t = taskDAO.getTaskbyId(id);
-                SubTaskDAO subtaskDAO = new SubTaskDAO();
+                    int id = Integer.parseInt(request.getParameter("id"));
+                    TaskDAO taskDAO = new TaskDAO();
+                    Task t = taskDAO.getTaskbyId(id);
+                    SubTaskDAO subtaskDAO = new SubTaskDAO();
 
-            %>
+                %>
                 <div class="taskDetailsTable">
                     <table>
                         <tr>
@@ -54,8 +54,8 @@
                             <td><%=t.getAssignEmp()%></td>
                             <th>Progress:</th>
                             <td>
-                            <progress class="progress-bar "  id="file"  value="<%out.print(String.format("%.2f", subtaskDAO.progress(id)));%>"  max="100">  </progress>
-                            <% out.println("" + String.format("%.2f", subtaskDAO.progress(id)) + "%");%>
+                                <progress class="progress-bar "  id="file"  value="<%out.print(String.format("%.2f", subtaskDAO.progress(id)));%>"  max="100">  </progress>
+                                    <% out.println("" + String.format("%.2f", subtaskDAO.progress(id)) + "%");%>
                             </td>
                         </tr>
 
@@ -80,10 +80,10 @@
                 <h3 class="addDetailsTitle">See Additional Details (Feedback):</h3>
                 <%
 
-                                FeedbackDAO fbDAO = new FeedbackDAO();
-                                List<Feedback> feedbacks = fbDAO.showFeedback(id);
-                                for (Feedback fb : feedbacks) {
-                            %>
+                    FeedbackDAO fbDAO = new FeedbackDAO();
+                    List<Feedback> feedbacks = fbDAO.showFeedback(id);
+                    for (Feedback fb : feedbacks) {
+                %>
                 <div class="taskDetailsTable">
                     <h5 >Title: <%=fb.getSubject()%> </h5>
                     <h6>Comment Date: <%=fb.getDate()%> </h6>

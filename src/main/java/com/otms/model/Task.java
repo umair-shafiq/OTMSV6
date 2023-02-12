@@ -22,7 +22,6 @@ public class Task {
     private int man_id;
     private String comment;
     private int priority;
-    
 
     public Task() {
     }
@@ -151,7 +150,5 @@ public class Task {
     public void setPriority(int priority) {
         this.priority = priority;
     }
-    
-    
 
 }

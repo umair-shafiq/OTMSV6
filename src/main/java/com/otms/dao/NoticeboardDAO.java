@@ -38,7 +38,7 @@ public class NoticeboardDAO {
     public List<Noticeboard> selectAllNotice() throws ClassNotFoundException {
         List<Noticeboard> notices = new ArrayList<Noticeboard>();
         Noticeboard n = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String SELECT_ALL_Notice = "Select * from noticeboard order by date desc";
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_Notice);
 
@@ -61,7 +61,7 @@ public class NoticeboardDAO {
     //Edit Notice by ID
     public Noticeboard getNoticebyId(int id) throws ClassNotFoundException {
         Noticeboard n = null;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
 
             String sql = "select * from noticeboard where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -106,7 +106,7 @@ public class NoticeboardDAO {
     //delete Notice
     public boolean deleteNotice(int id) throws ClassNotFoundException {
         boolean rowDeleted = false;
-        try ( Connection con = db_connection.connect()) {
+        try (Connection con = db_connection.connect()) {
             String DELETE_Notice_SQL = "delete from noticeboard where id=?;";
             PreparedStatement ps = con.prepareStatement(DELETE_Notice_SQL);
             ps.setInt(1, id);
