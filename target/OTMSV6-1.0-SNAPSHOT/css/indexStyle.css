@@ -130,6 +130,7 @@ button:hover span{
 .about img{
 	height: 601px;
 	width: 450px;
+        border-radius: 15px;
 }
 
 .about-text{

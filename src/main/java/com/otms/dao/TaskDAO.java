@@ -291,7 +291,7 @@ public class TaskDAO {
         List<Task> tasks = new ArrayList<Task>();
         Task t = null;
         try (Connection con = db_connection.connect()) {
-            String SELECT_ALL_TASKS = "SELECT tasks.id, tasks.t_name, tasks.t_description, tasks.t_startDate, tasks.t_endDate, tasks.t_assignBy, users.u_name, tasks.t_status, man_id, tasks.t_priority FROM otms.tasks INNER JOIN otms.users ON users.id = tasks.emp_id where man_id=?;";
+            String SELECT_ALL_TASKS = "SELECT tasks.id, tasks.t_name, tasks.t_description, tasks.t_startDate, tasks.t_endDate, tasks.t_assignBy, users.u_name, tasks.t_status, man_id, tasks.t_priority FROM otms.tasks INNER JOIN otms.users ON users.id = tasks.emp_id where man_id=? ORDER BY tasks.t_priority asc;";
 
             PreparedStatement preparedStatement = con.prepareStatement(SELECT_ALL_TASKS);
             preparedStatement.setInt(1, ManId);

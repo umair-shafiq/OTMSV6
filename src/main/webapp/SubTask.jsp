@@ -47,16 +47,17 @@
                                 for (SubTask st : subtask) {
                             %>
                             <tr>
-                                <<td><%=st.getTaskId()%></td>
+                                <td><%=st.getTaskId()%></td>
                                 <td><%=st.getSubtaskName()%></td>
                                 <td><%=st.getSubTaskDescription()%></td>
                                 <td><%=st.getSubTaskStatus()%></td>
                             </tr>
                             <% }%> 
                         </tbody>
-                    </table>
                 </div>
+
             </main>
+
         </section>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>       
         <script>

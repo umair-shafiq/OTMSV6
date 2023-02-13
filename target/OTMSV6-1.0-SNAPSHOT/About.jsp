@@ -17,7 +17,7 @@
     <body>
         <section class="about">
             <div class="main">
-                <img src="assets/about.jpg">
+                <img src="assets/clock.jpg">
                 <div class="about-text">
                     <h1>About Us</h1>
                     <p>This project is about Online Task Management System. In this project, we create a complete Software for Online Task Management System. <br>
