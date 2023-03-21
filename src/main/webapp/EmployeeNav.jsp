@@ -52,12 +52,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="ViewNoticeboard.jsp" class="btn">
-                        <i class="fa-solid fa-sheet-plastic bs"></i>
-                        <span class="text">Noticeboard</span>
-                    </a>
-                </li>
 
                 <li>
                     <a href="EmployeeNotification.jsp?id=${Employee.id}" class="btn">
@@ -65,6 +59,15 @@
                         <span class="text">Notification</span>
                     </a>
                 </li>
+                
+                <li>
+                    <a href="ViewNoticeboard.jsp" class="btn">
+                        <i class="fa-solid fa-sheet-plastic bs"></i>
+                        <span class="text">Noticeboard</span>
+                    </a>
+                </li>
+
+
 
                 <li>
                     <a href="<%=request.getContextPath()%>/LogoutServlet" class="logout btn" >
